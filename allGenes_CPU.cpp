@@ -5,17 +5,17 @@
 */
 #include <sys/time.h>
 #include <stdio.h>
-#include <cuda_runtime.h>
 #include <string.h>
+#include <stdlib.h>
 #include <math.h>
 
-#define nrows 11976
-#define ncols 744
+#define nrows 907
+#define ncols 55
 
 #define sBuffer 10240
 
 float h_data[nrows][ncols];
-float h_score[nrows][nrows];
+//float h_score[nrows][nrows];
 float c_score[nrows][nrows];
 float c_row_sum[nrows];
 
@@ -24,7 +24,7 @@ void populateArrays(){
     FILE *fp;
 
   
-    fp = fopen("miRNA-target-interaction-v2.csv", "r");
+    fp = fopen("GSE72962_PD_miRNA_SSSim.csv", "r");
     //fp = fopen("ADNormal_pp_1.csv", "r");
     for(int i=0;i<nrows;i++)
     {
@@ -101,7 +101,7 @@ void saveResults()
 {
 	FILE *fp;
 	
-	fp =fopen("results_miRNA-target-interaction-v2.csv","w");
+	fp =fopen("results_GSE72962_PD_miRNA_SSSim.csv","w");
 	for(int i=0; i<nrows; i++)
 	{
 		float score;
@@ -118,7 +118,7 @@ void saveResults()
 	}
 	fclose(fp);
 
-	fp =fopen("results_rowsum_miRNA-target-interaction-v2.csv","w");
+	fp =fopen("results_rowsum_GSE72962_PD_miRNA_SSSim.csv","w");
 	for(int i=0; i<nrows; i++)
 	{
 		fprintf(fp, "%f\n", c_row_sum[i]);
@@ -129,8 +129,7 @@ void saveResults()
 /**
  * Host main routine
  */
-int
-main(void)
+int main(void)
 {
     printf("[ getSSSim of all genes ]");
 
@@ -157,4 +156,3 @@ main(void)
     printf("Done\n");
     return 0;
 }
-

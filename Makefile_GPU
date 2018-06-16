@@ -225,7 +225,7 @@ else
 	@echo "Sample is ready - all dependencies have been met"
 endif
 
-allGenes.o:allGenes_CPU.cu
+allGenes.o:allGenes.cu
 	$(EXEC) $(NVCC) $(INCLUDES) $(ALL_CCFLAGS) $(GENCODE_FLAGS) -o $@ -c $<
 
 allGenes: allGenes.o
