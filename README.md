@@ -2,13 +2,13 @@
 CUDA C implementation of getSSSim gene coexpression similarity measure
 
 # Tested using:
-Platform: Ubuntu 14.04, gcc 4.8.4, CUDA 7.5
+Platform: Ubuntu 16.04, gcc 5.4.0, CUDA 7.5
 
 Graphics card: NVIDIA GeForce GTX 980
 
 # To use:
 1. The provided Makefile compiles the allGenes.cu, which is the main CUDA implmentation of getSSSim
-2. For users without a GPU, we also provide a CPU only implementation of getSSSim, which still compiles using nvcc, as it uses some functions from the CUDA library for storekeeping. It can be converted to use standard C library functions to compile using GCC alone (without CUDA API).
+2. For users without a GPU, we also provide a CPU only implementation of getSSSim. You can compile it using g++ (without CUDA API).
 3. Additionally, we provide the version of the getSSSim used in our 2016 Nature Scientific Reports paper.
 
 If you use this code in your research, please cite our paper:
