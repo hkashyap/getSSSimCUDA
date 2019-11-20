@@ -1,5 +1,5 @@
 # getSSSimCUDA
-CUDA C implementation of getSSSim gene coexpression similarity measure
+CUDA implementation of getSSSim gene coexpression similarity measure
 
 # Tested using:
 Platform: Ubuntu 16.04, gcc 5.4.0, CUDA 7.5
